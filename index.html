@@ -1,0 +1,309 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praktikum Multimedia - Modul 2</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  h1 {
+    text-align: center;
+    color: #1a365d;
+    margin-bottom: 5px;
+  }
+
+  .student-identity {
+    text-align: center;
+    color: #4a5568;
+    font-size: 1.05em;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #3182ce;
+    padding-bottom: 15px;
+  }
+
+  h2 {
+    color: #2b6cb0;
+    margin-top: 30px;
+    border-left: 4px solid #3182ce;
+    padding-left: 10px;
+  }
+
+  .explanation {
+    background-color: #ebf8ff;
+    border-left: 4px solid #3182ce;
+    padding: 12px 15px;
+    margin: 15px 0;
+    font-size: 0.95em;
+    color: #2c5282;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .demo-box {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  button {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  button:hover {
+    background-color: #2b6cb0;
+  }
+
+  #div1, #div2 {
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px dashed #4a5568;
+    background-color: #edf2f7;
+    border-radius: 6px;
+    vertical-align: middle;
+  }
+
+  iframe, video, audio {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+
+  /* Footer */
+  footer {
+    max-width: 800px;
+    margin: 20px auto 0;
+    padding: 18px 30px;
+    background-color: #1a365d;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  footer p {
+    margin: 4px 0;
+  }
+
+  footer strong {
+    color: #bee3f8;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Praktikum Multimedia Modul 2</h1>
+
+  <p class="student-identity">
+    <strong>Nama:</strong> Kairos Abraham Sumigar &nbsp;|&nbsp; 
+    <strong>NIM:</strong> 240211060115 &nbsp;|&nbsp; 
+    <strong>Kelas:</strong> D
+  </p>
+
+  <h2>1. HTML Audio</h2>
+  <div class="explanation">
+    <strong>Penjelasan Modul:</strong> Elemen <code>&lt;audio&gt;</code> digunakan untuk memutar berkas suara di web. Atribut <code>controls</code> menambahkan tombol play, pause, dan volume secara otomatis.
+  </div>
+
+  <div class="demo-box">
+    <audio controls>
+      <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <h2>2. HTML Video (Standar & JavaScript Controls)</h2>
+  <div class="explanation">
+    <strong>Penjelasan Modul:</strong> Elemen <code>&lt;video&gt;</code> digunakan untuk menampilkan video. JavaScript dapat mengontrol pemutaran (Play/Pause) dan mengubah ukuran video (Big, Small, Normal) menggunakan properti DOM.
+  </div>
+  
+  <div class="demo-box">
+    <h3>Video Standar (Controls Bawaan)</h3>
+    <video width="320" height="240" controls>
+      <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+      <source src="https://www.w3schools.com/html/movie.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="demo-box">
+    <h3>Video Interaktif (Kontrol JavaScript)</h3>
+
+    <div>
+      <button onclick="playPause()">Play/Pause</button>
+      <button onclick="makeBig()">Big</button>
+      <button onclick="makeSmall()">Small</button>
+      <button onclick="makeNormal()">Normal</button>
+    </div>
+
+    <br>
+
+    <video id="video1" width="420">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <p>
+      Video courtesy of 
+      <a href="https://www.bigbuckbunny.org/" target="_blank">
+        Big Buck Bunny
+      </a>.
+    </p>
+  </div>
+
+  <h2>3. HTML YouTube Video</h2>
+  <div class="explanation">
+    <strong>Penjelasan Modul:</strong> Pemutaran video YouTube pada HTML5 disarankan menggunakan elemen <code>&lt;iframe&gt;</code>. Tag lama seperti <code>&lt;object&gt;</code> dan <code>&lt;embed&gt;</code> sudah usang (<i>deprecated</i>).
+  </div>
+
+  <div class="demo-box">
+    <iframe 
+      width="420" 
+      height="315" 
+      src="https://www.youtube-nocookie.com/embed/tgbNymZ7vqY" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <h2>4. HTML Geolocation API</h2>
+  <div class="explanation">
+    <strong>Penjelasan Modul:</strong> Geolocation API digunakan untuk mendapatkan koordinat lokasi geografis pengguna (Latitude & Longitude) melalui metode <code>navigator.geolocation.getCurrentPosition()</code>.
+  </div>
+
+  <div class="demo-box">
+    <p>Click the button to get your coordinates.</p>
+    <button onclick="getLocation()">Try It</button>
+    <p id="demo" style="font-weight: bold; color: #2d3748; margin-top: 10px;"></p>
+  </div>
+
+  <h2>5. HTML Drag and Drop API</h2>
+  <div class="explanation">
+    <strong>Penjelasan Modul:</strong> Agar objek dapat digeser, beri atribut <code>draggable="true"</code>. Proses menyeret dan meletakkan elemen menggunakan event <code>ondragstart</code>, <code>ondragover</code>, dan <code>ondrop</code>.
+  </div>
+
+  <div class="demo-box">
+    <p>Drag the image back and forth between the two div elements.</p>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img 
+        src="https://www.w3schools.com/html/img_w3slogo.gif" 
+        draggable="true" 
+        ondragstart="drag(event)" 
+        id="drag1" 
+        width="88" 
+        height="31" 
+        alt="Logo W3Schools">
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Nama:</strong> Kairos Sumigar</p>
+  <p><strong>NIM:</strong> 240211060115</p>
+</footer>
+
+<script>
+function playPause() {
+    var myVideo = document.getElementById("video1");
+
+    if (myVideo.paused)
+        myVideo.play();
+    else
+        myVideo.pause();
+}
+
+function makeBig() {
+    var myVideo = document.getElementById("video1");
+    myVideo.width = 560;
+}
+
+function makeSmall() {
+    var myVideo = document.getElementById("video1");
+    myVideo.width = 320;
+}
+
+function makeNormal() {
+    var myVideo = document.getElementById("video1");
+    myVideo.width = 420;
+}
+
+function getLocation() {
+    var x = document.getElementById("demo");
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    var x = document.getElementById("demo");
+
+    x.innerHTML = 
+        "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+
+    var data = ev.dataTransfer.getData("text");
+
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+</body>
+</html>
+```
